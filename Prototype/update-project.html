@@ -59,7 +59,9 @@
         <!-- Navbar-->
         <header class="main-header-top hidden-print">
             <a href="index.html" class="logo"><img class="img-fluid able-logo">
-                <span style="font-size: 30px">QLDA</span>
+                <span style="font-size: 22px;
+                text-transform: uppercase;
+                font-weight: bold;">Dự án đầu tư</span>
             </a>
             <nav class="navbar navbar-static-top">
                 <!-- Sidebar toggle button-->
@@ -243,7 +245,7 @@
                 <ul class="sidebar-menu">
                     <li class=" treeview">
                         <a class="waves-effect waves-dark" href="index.html">
-                            <i class="icon-speedometer"></i><span> Dashboard</span>
+                            <i class="icon-speedometer"></i><span> Tổng quan</span>
                         </a>
                     </li>
                     <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span>
@@ -264,9 +266,11 @@
                             <li><a class="waves-effect waves-dark" href="danhmucchitieu.html"><i class="icon-arrow-right"></i>
                                     Danh mục chỉ tiêu quản lý</a></li>
                             <li><a class="waves-effect waves-dark" href="danhmucnhadautu.html"><i class="icon-arrow-right"></i>
-                                    Danh mục nhà đầu tư</a></li>
+                                    Danh mục đơn vị</a></li>
                             <li><a class="waves-effect waves-dark" href="danhmucnganhnghe.html"><i class="icon-arrow-right"></i>
-                                    Danh mục phân loại ngành nghề</a></li>
+                                    Danh mục phân loại lĩnh vực</a></li>
+                            <li><a class="waves-effect waves-dark" href="danhmucnganhnghe.html"><i class="icon-arrow-right"></i>
+                                    Danh mục nhà đầu tư</a></li>
                             <li><a class="waves-effect waves-dark" href="danhmucgopvon.html"><i class="icon-arrow-right"></i>
                                     Danh mục hình thức góp vốn</a></li>
                             <li><a class="waves-effect waves-dark" href="danhmuchinhthucdautu.html"><i class="icon-arrow-right"></i>
@@ -312,11 +316,12 @@
                         <ul class="treeview-menu">
                             <li><a class="active waves-effect waves-dark" href="list-project.html"><i class="icon-arrow-right"></i>
                                     Danh sách các dự án đầu tư</a></li>
-                            <li ><a class="waves-effect waves-dark" href="add-project.html"><i class="icon-arrow-right"></i>
+                            <li><a class="waves-effect waves-dark" href="add-project.html"><i class="icon-arrow-right"></i>
                                     Thêm mới dự án đầu tư</a></li>
                             <li><a class="waves-effect waves-dark" href="list-edit-project.html"><i class="icon-arrow-right"></i>
                                     Cập nhật điều chỉnh dự án đầu tư</a></li>
-                            <li class="active"><a class="waves-effect waves-dark" href="list-update-project.html"><i class="icon-arrow-right"></i>
+                            <li class="active"><a class="waves-effect waves-dark" href="list-update-project.html"><i
+                                        class="icon-arrow-right"></i>
                                     Cập nhật thông tin dự án đầu tư</a></li>
                         </ul>
                     </li>
@@ -635,11 +640,10 @@
                                         <div class="col-md-4">
                                             <input disabled type="text" class="form-control" placeholder="Tên dự án">
                                         </div>
-                                        <label for="inline2pwd" class="col-md-2 col-form-label ">Nhóm
-                                            dự án</label>
+                                        <label for="inline2pwd" class="col-md-2 col-form-label ">Loại dự án</label>
                                         <div class="col-md-4">
                                             <select disabled class="form-control">
-                                                <option>Chọn nhóm</option>
+                                                <option>Chọn...</option>
                                             </select>
                                         </div>
                                     </div>
@@ -653,11 +657,11 @@
                                             </select>
                                         </div>
                                         <label for="inline2pwd" class="col-md-2 col-form-label ">
-                                            Cấp phê duyệt
+                                            Nhóm dự án
                                         </label>
                                         <div class="col-md-4">
                                             <select disabled class="form-control">
-                                                <option>Chọn cấp</option>
+                                                <option>Chọn...</option>
                                             </select>
                                         </div>
                                     </div>
@@ -671,6 +675,12 @@
                                                 <option>Chọn hình thức</option>
                                             </select>
                                         </div>
+                                        <label for="inline2pwd" class="col-md-2 col-form-label ">Cấp phê duyệt</label>
+                                        <div class="col-md-4">
+                                            <select disabled class="form-control">
+                                                <option>Chọn...</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inline2pwd" class="col-md-2 col-form-label ">
@@ -680,6 +690,12 @@
                                         <div class="col-md-4">
                                             <select disabled class="form-control">
                                                 <option>Chọn lĩnh vực</option>
+                                            </select>
+                                        </div>
+                                        <label for="inline2pwd" class="col-md-2 col-form-label ">Thuộc chương trình</label>
+                                        <div class="col-md-4">
+                                            <select disabled class="form-control">
+                                                <option>Chọn...</option>
                                             </select>
                                         </div>
                                     </div>
@@ -721,7 +737,7 @@
                                             Ngày hiệu lực
                                         </label>
                                         <div class="col-md-4">
-                                            <input  type="date" class="form-control" placeholder="Năm thực hiện">
+                                            <input type="date" class="form-control" placeholder="Năm thực hiện">
                                         </div>
 
                                     </div>
@@ -2579,11 +2595,11 @@
 
                                         </div>
                                         <div class="form-group row">
-                                                <label for="h-email" class="col-md-2 col-form-label">Thời hạn thuê đất</label>
-                                                <div class="col-md-3">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                            <label for="h-email" class="col-md-2 col-form-label">Thời hạn thuê đất</label>
+                                            <div class="col-md-3">
+                                                <input type="text" class="form-control">
                                             </div>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="h-email" class="col-md-2 col-form-label">Quyết định giao số</label>
                                             <div class="col-md-2">
@@ -2599,18 +2615,18 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                                <label for="h-email" class="col-md-2 col-form-label">Ngày bàn giao thực tế</label>
-                                                <div class="col-md-3">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                            <label for="h-email" class="col-md-2 col-form-label">Ngày bàn giao thực tế</label>
+                                            <div class="col-md-3">
+                                                <input type="text" class="form-control">
                                             </div>
+                                        </div>
                                         <div class="form-group row">
                                             <div class="col-md-10 ">
                                                 <button class="btn btn-primary"> Thêm mới</button>
                                             </div>
 
                                         </div>
-                                        
+
                                     </div>
                                     <a class="accordion-msg scale_active ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-collapsed ui-corner-all"
                                         role="tab" id="ui-id-5" aria-controls="ui-id-6" aria-selected="false"
@@ -2628,27 +2644,23 @@
                                                                 rowspan="1" colspan="1" style="width: 52px; text-align: center"
                                                                 aria-sort="ascending" aria-label="Name: activate to sort column descending">STT</th>
                                                             <th class="sorting" tabindex="0" aria-controls="advanced-table"
-                                                                rowspan="1" colspan="1"
-                                                                aria-label="Position: activate to sort column ascending">
+                                                                rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">
                                                                 Số văn bản
                                                             </th>
                                                             <th class="sorting text-center" tabindex="0" aria-controls="advanced-table"
-                                                                rowspan="1" colspan="1" 
-                                                                aria-label="Office: activate to sort column ascending">
+                                                                rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">
                                                                 Ngày văn bản
                                                             </th>
                                                             <th class="sorting text-center" tabindex="0" aria-controls="advanced-table"
-                                                                rowspan="1" colspan="1" 
-                                                                aria-label="Office: activate to sort column ascending">
+                                                                rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">
                                                                 Nội dung chính
                                                             </th>
                                                             <th class="sorting" tabindex="0" aria-controls="advanced-table"
-                                                                rowspan="1" colspan="1" 
-                                                                aria-label="Office: activate to sort column ascending">
+                                                                rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">
                                                                 Ghi chú
                                                             </th>
                                                             <th class="sorting text-center" tabindex="0" aria-controls="advanced-table"
-                                                                rowspan="1" colspan="1"  aria-label="Age: activate to sort column ascending">
+                                                                rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">
                                                                 File đính kèm
                                                             </th>
                                                             <th class="sorting" tabindex="0" aria-controls="advanced-table"
@@ -2669,7 +2681,7 @@
                                                                 <a href="#">QD-09_QuyetDinhVeViec.doc</a>
                                                             </td>
                                                             <td style="font-size:14px">
-                                                                    <i class="icofont icofont-edit"></i>
+                                                                <i class="icofont icofont-edit"></i>
                                                                 <i class="icofont icofont-trash"></i>
                                                             </td>
                                                         </tr>
@@ -2683,7 +2695,7 @@
                                                                 <a href="#">QD-09_QuyetDinhVeViec.doc</a>
                                                             </td>
                                                             <td style="font-size:14px">
-                                                                    <i class="icofont icofont-edit"></i>
+                                                                <i class="icofont icofont-edit"></i>
                                                                 <i class="icofont icofont-trash"></i>
                                                             </td>
                                                         </tr>
@@ -2697,7 +2709,7 @@
                                                                 <a href="#">QD-09_QuyetDinhVeViec.doc</a>
                                                             </td>
                                                             <td style="font-size:14px">
-                                                                    <i class="icofont icofont-edit"></i>
+                                                                <i class="icofont icofont-edit"></i>
                                                                 <i class="icofont icofont-trash"></i>
                                                             </td>
                                                         </tr>
@@ -2711,7 +2723,7 @@
                                                                 <a href="#">QD-09_QuyetDinhVeViec.doc</a>
                                                             </td>
                                                             <td style="font-size:14px">
-                                                                    <i class="icofont icofont-edit"></i>
+                                                                <i class="icofont icofont-edit"></i>
                                                                 <i class="icofont icofont-trash"></i>
                                                             </td>
                                                         </tr>
@@ -2725,7 +2737,7 @@
                                                                 <a href="#">QD-09_QuyetDinhVeViec.doc</a>
                                                             </td>
                                                             <td style="font-size:14px">
-                                                                    <i class="icofont icofont-edit"></i>
+                                                                <i class="icofont icofont-edit"></i>
                                                                 <i class="icofont icofont-trash"></i>
                                                             </td>
                                                         </tr>

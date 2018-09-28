@@ -12,9 +12,9 @@ $(document).ready(function () {
         data: {
             // iris data from R
             columns: [
-                ['Dự án đang thực hiện', 20],
-                ['Dự án kết thúc đầu tư, bàn giao đưa vào sử dụng trong kỳ', 50],
-                ['Dự án bị thu hồi trong kỳ', 20],
+                ['Dự án đang thực hiện', 430],
+                ['Dự án kết thúc đầu tư, bàn giao đưa vào sử dụng trong kỳ', 22],
+                ['Dự án bị thu hồi trong kỳ', 0],
             ],
             type: 'pie'
         },
@@ -30,8 +30,8 @@ $(document).ready(function () {
         data: {
             // iris data from R
             columns: [
-                ['Số lượng dự án đúng tiến độ', 74],
-                ['Số lượng dự án chậm tiến độ', 16],
+                ['Đúng tiến độ', 388],
+                ['Chậm tiến độ', 42],
             ],
             type: 'pie'
         },
@@ -47,9 +47,9 @@ $(document).ready(function () {
         data: {
             // iris data from R
             columns: [
-                ['Dự án sử dụng vốn nhà nước', 5],
-                ['Dự án đầu tư theo hình thức PPP', 2],
-                ['Dự án sử dụng nguồn vốn khác', 3],
+                ['Dự án sử dụng vốn nhà nước', 310],
+                ['Dự án đầu tư theo hình thức PPP', 110],
+                ['Dự án sử dụng nguồn vốn khác', 32],
             ],
             type: 'pie'
         },
@@ -58,20 +58,26 @@ $(document).ready(function () {
         },
         color: {
             pattern: ['#536dfe', '#11c15b','#ff5252']
-        }
+        },
+        tooltip: {
+            format: {
+                value: function (value, ratio, id) {
+                    value = value + '/452';
+                    return value;
+                }
+            }
+        },
     });
     var tynguonvonchart = c3.generate({
         bindto: '#tynguonvonchart',
         data: {
             // iris data from R
             columns: [
-                ['Vốn ngân sách', 180],
-                ['Vốn ODA', 220],
-                ['Vốn trái phiếu chính phủ', 150],
-                ['Vốn nhà nước ngoài vốn đầu tư công', 140],
-                ['Vốn chủ sở hữu', 150],
-                ['Vốn vay', 80],
-                ['Vốn khác', 100],
+                ['Vốn đầu tư công', 180],
+                ['Vốn nhà nước ngoài vốn đầu tư công', 220],
+                ['Vốn khai trong nước', 150],
+                ['Vốn khai nước ngoài', 140],
+                ['Vốn chủ sở hữu', 150]
             ],
             type: 'pie'
         },
@@ -79,8 +85,17 @@ $(document).ready(function () {
             show: true
         },
         color: {
-            pattern: ['#FFBF00', '#9966CC', '#7FFFD4','#007FFF','#CC5500','#C41E3A','#007BA7']
-        }
+            pattern: ['#FFBF00', '#9966CC', '#007FFF','#C41E3A','#007BA7']
+        },
+        tooltip: {
+            format: {
+                title: function (d) { var thang = d+1; return 'Tổng vốn 840 tỷ đồng.'; },
+                value: function (value, ratio, id) {
+                    value = value + " tỷ đồng";
+                    return value;
+                }
+            }
+        },
     });
     var chart = c3.generate({
         bindto: '#chart3',
@@ -118,20 +133,18 @@ $(document).ready(function () {
             x: 'x',
             columns: [
                 ['x', 'Tháng 1', 'Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
-                ['Vốn ngân sách', 30, 20, 50, 40, 60, 50,30, 20, 50, 40, 60, 50],
-                ['Vốn ODA', 200, 130, 90, 240, 130, 220,200, 130, 90, 240, 130, 220],
-                ['Vốn trái phiếu chính phủ',300, 200, 160, 400, 250, 250,300, 200, 160, 400, 250, 250],
-                ['Vốn nhà nước ngoài Vốn đầu tư công', 130, 120, 150, 140, 160, 150,130, 120, 150, 140, 160, 150],
-                ['Vốn chủ sở hữu',130, 120, 150, 140, 160, 150,130, 120, 150, 140, 160, 150],
-                ['Vốn vay',130, 120, 150, 140, 160, 150,130, 120, 150, 140, 160, 150],
-                ['Vốn khác', 130, 120, 150, 140, 160, 150,130, 120, 150, 140, 160, 150],
+                ['Vốn đầu tư công', 30, 20, 45, 34, 26, 35,43, 42, 35, 44, 36, 45],
+                ['Vốn nhà nước ngoài vốn đầu tư công', 20, 13, 9, 24, 13, 22,20, 13, 9, 24, 13, 22],
+                ['Vốn khai trong nước',30, 20, 16, 40, 25, 25,30, 20, 16, 40, 25, 20],
+                ['Vốn khai nước ngoài', 13, 12, 10, 14, 16, 15,13, 12, 15, 14, 16, 15],
+                ['Vốn chủ sở hữu',13, 12, 5, 14, 16, 15,13, 12, 10, 14, 8, 15],
             ],
             type: 'bar',
             types: {
                 'Nguồn lao động': 'spline',
             },
             groups: [
-                ['Vốn ngân sách','Vốn ODA','Vốn trái phiếu chính phủ','Vốn nhà nước ngoài Vốn đầu tư công','Vốn chủ sở hữu','Vốn vay','Vốn khác']
+                ['Vốn đầu tư công','Vốn nhà nước ngoài vốn đầu tư công','Vốn khai trong nước','Vốn khai nước ngoài','Vốn chủ sở hữu']
             ],
             
         },
