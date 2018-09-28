@@ -84,6 +84,13 @@ $(document).ready(function() {
         };
         $('.showChat').toggle('slide', options, 500);
     });
+    //Advance Search
+    $('.btnAdvanceSearch').on('click', function() {
+        var options = {
+            direction: 'bottom'
+        };
+        $('.boxAdvanceSearch').toggle('slide', 500);
+    });
     //open friend chat
     $('.friendlist-box').on('click', function() {
 
