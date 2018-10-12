@@ -1,0 +1,6 @@
+export const authType = {
+    AUTH_USER: 'AUTH_USER',
+    UNAUTH_USER: 'UNAUTH_USER',
+    AUTH_ERROR: 'AUTH_ERROR',
+    FETCH_MESSAGE: 'FETCH_MESSAGE'
+};
