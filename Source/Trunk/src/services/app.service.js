@@ -9,4 +9,8 @@ export default class AppService {
     static isLoggedIn() {
         return _.isObject(this.getAccessToken());
     }
+
+    static getPrivileges() {
+        return this.getAccessToken().privileges.split(',');
+    }
 }
