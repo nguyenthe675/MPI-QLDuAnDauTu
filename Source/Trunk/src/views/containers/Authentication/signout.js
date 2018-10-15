@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import * as actions from '../../actions'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../../state/Authentication/auth.actions';
 class Signout extends Component {
 
   componentWillMount() {
@@ -8,7 +9,10 @@ class Signout extends Component {
   }
 
   render() {
-    return <div>Bye Bye</div>
+    return <div>
+      <h2>Bạn đã đăng xuất khỏi hệ thống</h2>
+      <h6>Xin đăng nhập lại <Link to='/login'>tại đây</Link></h6>
+    </div>
   }
 }
 

@@ -7,6 +7,7 @@ import Dashboard from './views/containers/Dashboard';
 
 
 import Login from './views/containers/Authentication/signin';
+import Signout from './views/containers/Authentication/signout';
 
 function Loading() {
     return <div>Đang tải...</div>;
@@ -42,6 +43,7 @@ class Routes extends React.Component {
                         })
                     }
                     <Route path="/login" component={Login} />
+                    <Route path="/signout" component={Signout} />
                 </Switch>
             </Router>
         );

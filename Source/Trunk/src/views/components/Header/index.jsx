@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserMenu from '../UserMenu';
 const md5 = require("blueimp-md5");
 
 export default class Header extends Component {
@@ -22,7 +23,6 @@ export default class Header extends Component {
     };
 
     render() {
-        const avatar = 'https://www.gravatar.com/avatar/' + md5(this.state.email || '') + '?d=identicon';
         return (
             <header className="main-header-top hidden-print">
                 <a href="index.html" className="logo"><img className="img-fluid able-logo" />
@@ -89,7 +89,7 @@ export default class Header extends Component {
 
                             </li>
                             <li className="dropdown">
-                                <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                                {/* <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
                                     className="dropdown-toggle drop icon-circle drop-image">
                                     <span><img className="img-circle " src="assets/images/avatar-1.png" alt="User Image" /></span>
                                     <span>Administrator <i className=" icofont icofont-simple-down"></i></span>
@@ -104,7 +104,8 @@ export default class Header extends Component {
                                     </li>
                                     <li><a href="#!"><i className="icon-logout"></i> Đăng xuất</a></li>
 
-                                </ul>
+                                </ul> */}
+                                <UserMenu></UserMenu>
                             </li>
                         </ul>
 

@@ -15,10 +15,10 @@ import './assets/css/color/color-1.min.css';
 class App extends React.Component {
     render() {
         return (
-            <div id={"gobiz-login-main"} className={""}>
+            <React.Fragment>
                 <Routes />
                 <ToastContainer />
-            </div>
+            </React.Fragment>
         );
     }
 }

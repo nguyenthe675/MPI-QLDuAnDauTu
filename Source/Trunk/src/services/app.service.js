@@ -13,4 +13,7 @@ export default class AppService {
     static getPrivileges() {
         return this.getAccessToken().privileges.split(',');
     }
+    static setAccessToken(token) {
+        sessionStorage.setItem("_accessToken", JSON.stringify(token));
+    }
 }

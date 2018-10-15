@@ -1,7 +1,7 @@
 import axios from 'axios';
-import Raven from 'raven-js';
+//import Raven from 'raven-js';
 import AppService from './app.service';
-
+import { apiUrl } from '../config';
 /**
  * Create a new Axios client instance
  * @see https://github.com/mzabriskie/axios#creating-an-instance
@@ -25,7 +25,7 @@ const getClient = (baseUrl = null) => {
     client.interceptors.request.use(
         requestConfig => requestConfig,
         (requestError) => {
-            Raven.captureException(requestError);
+            //Raven.captureException(requestError);
 
             return Promise.reject(requestError);
         },
@@ -36,7 +36,7 @@ const getClient = (baseUrl = null) => {
         response => response,
         (error) => {
             if (error.response.status >= 500) {
-                Raven.captureException(error);
+                //Raven.captureException(error);
             }
 
             return Promise.reject(error);

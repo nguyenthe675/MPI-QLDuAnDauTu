@@ -1,7 +1,10 @@
 import axios from 'axios';
 import querystring from 'querystring';
+import AppService from '../../services/app.service';
 import { authType } from './auth.type';
-const ROOT_URL = 'http://localhost/EPS.QLTS.Services.WebAPI/'
+import { ApiClient } from '../../services/api';
+
+let client = new ApiClient('http://localhost/EPS.QLTS.Services.WebAPI/');
 
 export function signinUser({ email, password }) {
 
@@ -12,7 +15,7 @@ export function signinUser({ email, password }) {
             }
         }
         // submit email and password to server
-        const request = axios.post(`${ROOT_URL}/oauth/token`,
+        const request = client.post(`/oauth/token`,
             querystring.stringify({
                 username: email,
                 password,
@@ -22,19 +25,18 @@ export function signinUser({ email, password }) {
             }),
             config
         );
-
         request
             .then(response => {
                 // -Save the JWT token
-                localStorage.setItem('token', response.data.token)
-
+                AppService.setAccessToken(response.data);
                 // -if request is good, we need to update state to indicate user is authenticated
                 dispatch({ type: authType.AUTH_USER })
             })
 
             // If request is bad...
             // -Show an error to the user
-            .catch(() => {
+            .catch((e) => {
+                console.log(e);
                 dispatch(authError('Thông tin đăng nhập không chính xác!'))
             })
 
@@ -42,15 +44,21 @@ export function signinUser({ email, password }) {
 }
 
 export function signoutUser() {
-    localStorage.removeItem('token')
-    return {
-        type: authType.UNAUTH_USER
+    return function (dispatch) {
+        client.post('/API/User/Logout').then(response => {
+            AppService.setAccessToken(null);
+            dispatch({ type: authType.UNAUTH_USER });
+            
+        }).catch((e) => {
+            console.log(e);
+            dispatch(authError('Có lỗi xảy ra khi đăng xuất!'))
+        })
     }
 }
 
 export function signupUser({ email, password, passwordConfirmation }) {
     return function (dispatch) {
-        axios.post(`${ROOT_URL}/signup`, { email, password, passwordConfirmation })
+        client.post(`/signup`, { email, password, passwordConfirmation })
             .then(response => {
                 dispatch({ type: authType.AUTH_USER })
                 localStorage.setItem('token', response.data.token)
@@ -68,16 +76,16 @@ export function authError(error) {
     }
 }
 
-export function fetchMessage() {
-    return function (dispatch) {
-        axios.get(ROOT_URL, {
-            headers: { authorization: localStorage.getItem('token') }
-        })
-            .then(response => {
-                dispatch({
-                    type: authType.FETCH_MESSAGE,
-                    payload: response.data.message
-                })
-            })
-    }
-}
+// export function fetchMessage() {
+//     return function (dispatch) {
+//         axios.get(ROOT_URL, {
+//             headers: { authorization: localStorage.getItem('token') }
+//         })
+//             .then(response => {
+//                 dispatch({
+//                     type: authType.FETCH_MESSAGE,
+//                     payload: response.data.message
+//                 })
+//             })
+//     }
+// }
