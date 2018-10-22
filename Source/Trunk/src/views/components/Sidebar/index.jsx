@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
 import MetisMenu from 'react-metismenu';
 import '../Sidebar/react-metismenu-standart.css';
 const menu1 = [
@@ -142,10 +141,6 @@ export default class Sidebar extends Component {
 
     render() {
         // let params = window.location.href.split("#");
-        const { match } = this.props;
-        //lấy currentRoute
-        let currentRoute = match.path && match.path !== '/' ? match.path.split('/')[1] : 'dashboard';
-
         return (
             <aside className="main-sidebar hidden-print ">
                 <section className="sidebar">
@@ -159,21 +154,21 @@ export default class Sidebar extends Component {
                     </div>
                     <ul className="nav sidebar-menu extra-profile-list">
                         <li>
-                            <a className="waves-effect waves-dark" href="profile.html">
+                            <a className="waves-effect waves-dark">
                                 <i className="icon-user"></i>
                                 <span className="menu-text">Thông tin tài khoản</span>
                                 <span className="selected"></span>
                             </a>
                         </li>
                         <li>
-                            <a className="waves-effect waves-dark" href="javascript:void(0)">
+                            <a className="waves-effect waves-dark">
                                 <i className="icon-settings"></i>
                                 <span className="menu-text">Cài đặt</span>
                                 <span className="selected"></span>
                             </a>
                         </li>
                         <li>
-                            <a className="waves-effect waves-dark" href="javascript:void(0)">
+                            <a className="waves-effect waves-dark">
                                 <i className="icon-logout"></i>
                                 <span className="menu-text">Đăng xuất</span>
                                 <span className="selected"></span>

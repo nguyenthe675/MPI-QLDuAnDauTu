@@ -1,4 +1,3 @@
-import axios from 'axios';
 import querystring from 'querystring';
 import AppService from '../../services/app.service';
 import { authType } from './auth.type';
@@ -31,6 +30,7 @@ export function signinUser({ email, password }) {
                 AppService.setAccessToken(response.data);
                 // -if request is good, we need to update state to indicate user is authenticated
                 dispatch({ type: authType.AUTH_USER })
+                dispatch(loginSuccess(response.data.avatar));
             })
 
             // If request is bad...
@@ -48,7 +48,7 @@ export function signoutUser() {
         client.post('/API/User/Logout').then(response => {
             AppService.setAccessToken(null);
             dispatch({ type: authType.UNAUTH_USER });
-            
+
         }).catch((e) => {
             console.log(e);
             dispatch(authError('Có lỗi xảy ra khi đăng xuất!'))
@@ -76,6 +76,12 @@ export function authError(error) {
     }
 }
 
+export function loginSuccess(avatar) {
+    return {
+        type: authType.AUTH_USER,
+        avatar: avatar
+    }
+}
 // export function fetchMessage() {
 //     return function (dispatch) {
 //         axios.get(ROOT_URL, {

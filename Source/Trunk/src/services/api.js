@@ -2,11 +2,13 @@ import axios from 'axios';
 //import Raven from 'raven-js';
 import AppService from './app.service';
 import { apiUrl } from '../config';
+
+axios.defaults.baseURL = apiUrl;
 /**
  * Create a new Axios client instance
  * @see https://github.com/mzabriskie/axios#creating-an-instance
  */
-const getClient = (baseUrl = null) => {
+const getClient = (baseUrl = null, showLoading = true) => {
 
     const options = {
         baseURL: baseUrl
@@ -23,7 +25,13 @@ const getClient = (baseUrl = null) => {
 
     // Add a request interceptor
     client.interceptors.request.use(
-        requestConfig => requestConfig,
+        requestConfig => {
+            if (showLoading) {
+                document.body.classList.add('loading-indicator');
+            }
+            //spinnerService.show('appSpinner');
+            return requestConfig;
+        },
         (requestError) => {
             //Raven.captureException(requestError);
 
@@ -33,12 +41,20 @@ const getClient = (baseUrl = null) => {
 
     // Add a response interceptor
     client.interceptors.response.use(
-        response => response,
+        response => {
+            if (showLoading) {
+                document.body.classList.remove('loading-indicator');
+            }
+            //spinnerService.hide('appSpinner');
+            return response;
+        },
         (error) => {
             if (error.response.status >= 500) {
                 //Raven.captureException(error);
             }
-
+            if (showLoading) {
+                document.body.classList.remove('loading-indicator');
+            }
             return Promise.reject(error);
         },
     );
@@ -47,8 +63,8 @@ const getClient = (baseUrl = null) => {
 };
 
 class ApiClient {
-    constructor(baseUrl = null) {
-        this.client = getClient(baseUrl);
+    constructor(baseUrl = null, showLoading = true) {
+        this.client = getClient(baseUrl, showLoading);
     }
 
     get(url, conf = {}) {

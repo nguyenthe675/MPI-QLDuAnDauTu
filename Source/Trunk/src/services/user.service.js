@@ -1,7 +1,5 @@
 import { ApiClient } from './api'
-
-
-let client = new ApiClient();
+const client = new ApiClient('http://localhost/EPS.QLTS.Services.WebAPI/API/', false);
 
 export default {
 

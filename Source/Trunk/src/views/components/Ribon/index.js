@@ -23,7 +23,7 @@ export default class Ribon extends Component {
                                         </li>
                                     }
                                     return <li className="breadcrumb-item" key={index}>
-                                        <a href="#" >
+                                        <a href="/" >
                                             {item.name}
                                         </a>
                                     </li>

@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { authType } from './state/Authentication/auth.type';
 import { store } from './helpers';
 import appService from './services/app.service';
-const token = localStorage.getItem('token');
+
 if (appService.isLoggedIn()) {
     store.dispatch({ type: authType.AUTH_USER })
 }

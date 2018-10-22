@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UserMenu from '../UserMenu';
-const md5 = require("blueimp-md5");
 
 export default class Header extends Component {
 
@@ -25,11 +24,11 @@ export default class Header extends Component {
     render() {
         return (
             <header className="main-header-top hidden-print">
-                <a href="index.html" className="logo"><img className="img-fluid able-logo" />
+                <a href="index.html" className="logo">
                     <span >Dự án đầu tư</span>
                 </a>
                 <nav className="navbar navbar-static-top">
-                    <a href="#!" data-toggle="offcanvas" className="sidebar-toggle"></a>
+                    <a href="/" data-toggle="offcanvas" className="sidebar-toggle"></a>
                     <div className="navbar-custom-menu f-right">
                         <ul className="top-nav">
                             <li className="dropdown pc-rheader-submenu message-notification search-toggle">
@@ -45,26 +44,26 @@ export default class Header extends Component {
                                 <ul className="dropdown-menu">
                                     <li className="not-head">You have <b className="text-primary">4</b> new notifications.</li>
                                     <li className="bell-notification">
-                                        <a href="javascript:;" className="media">
+                                        <a href="/" className="media">
                                             <span className="media-left media-icon">
-                                                <img className="img-circle" src="assets/images/avatar-1.png" alt="User Image" />
+                                                <img className="img-circle" src="assets/images/avatar-1.png" alt="Avatar người dùng" />
                                             </span>
                                             <div className="media-body"><span className="block">Lisa sent you a mail</span><span
                                                 className="text-muted block-time">2min ago</span></div>
                                         </a>
                                     </li>
                                     <li className="bell-notification">
-                                        <a href="javascript:;" className="media">
+                                        <a href="/" className="media">
                                             <span className="media-left media-icon">
-                                                <img className="img-circle" src="assets/images/avatar-2.png" alt="User Image" />
+                                                <img className="img-circle" src="assets/images/avatar-2.png" alt="Avatar người dùng" />
                                             </span>
                                             <div className="media-body"><span className="block">Server Not Working</span><span
                                                 className="text-muted block-time">20min ago</span></div>
                                         </a>
                                     </li>
                                     <li className="bell-notification">
-                                        <a href="javascript:;" className="media"><span className="media-left media-icon">
-                                            <img className="img-circle" src="assets/images/avatar-3.png" alt="User Image" />
+                                        <a href="/" className="media"><span className="media-left media-icon">
+                                            <img className="img-circle" src="assets/images/avatar-3.png" alt="Avatar người dùng" />
                                         </span>
                                             <div className="media-body"><span className="block">Transaction xyz complete</span><span
                                                 className="text-muted block-time">3 hours ago</span></div>

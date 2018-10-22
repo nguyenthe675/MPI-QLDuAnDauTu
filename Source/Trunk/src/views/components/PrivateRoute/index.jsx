@@ -1,9 +1,10 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom';
+import AppService from '../../../services/app.service';
 
-export const PrivateRoute = ({ component: ComposedComponent, ...rest }) => {
+export const PrivateRoute = ({ component: ComposedComponent, permission: Permission, ...rest }) => {
 
     class Authentication extends Component {
 
@@ -15,6 +16,14 @@ export const PrivateRoute = ({ component: ComposedComponent, ...rest }) => {
                     state: {
                         from: props.location,
                         message: 'Bạn cần đăng nhập hệ thống!'
+                    }
+                }} />
+            } else if (!AppService.checkPermission(Permission)) {
+                return <Redirect to={{
+                    pathname: '/notfound',
+                    state: {
+                        from: props.location,
+                        message: 'Bạn không có quyền truy cập trang này!'
                     }
                 }} />
             } else {

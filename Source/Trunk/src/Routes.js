@@ -8,6 +8,7 @@ import Dashboard from './views/containers/Dashboard';
 
 import Login from './views/containers/Authentication/signin';
 import Signout from './views/containers/Authentication/signout';
+import NotFound from './views/containers/Authentication/notfound';
 
 function Loading() {
     return <div>Đang tải...</div>;
@@ -19,15 +20,10 @@ const Users = Loadable({
     loading: Loading,
 });
 
-const UserDetail = Loadable({
-    loader: () => import('./views/containers/Users/Detail'),
-    loading: Loading,
-});
 
 const routes = [
-    { path: '/', exact: true, name: 'Dashboard', component: Dashboard },
-    { path: '/users', exact: true, name: 'Users', component: Users },
-    { path: '/users/:id', exact: true, name: 'UserDetail', component: UserDetail },
+    { path: '/', exact: true, name: 'Dashboard', component: Dashboard, permission: ['TS_DanhSachTaiSanDonVi'] },
+    { path: '/users', exact: true, name: 'Users', component: Users, permission: ['QTHT_QuanLyNguoiDung'] },
 ];
 
 class Routes extends React.Component {
@@ -38,12 +34,13 @@ class Routes extends React.Component {
                     {
                         routes.map((route, index) => {
                             return (
-                                <PrivateRoute key={index} exact={route.exact} path={route.path} component={route.component} />
+                                <PrivateRoute key={index} exact={route.exact} path={route.path} component={route.component} permission={route.permission} />
                             )
                         })
                     }
                     <Route path="/login" component={Login} />
                     <Route path="/signout" component={Signout} />
+                    <Route path="/notfound" component={NotFound} />
                 </Switch>
             </Router>
         );

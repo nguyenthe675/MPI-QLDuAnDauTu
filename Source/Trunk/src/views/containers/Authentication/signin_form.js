@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
-import { renderTextField, renderFormControl } from './form_helpers'
+import { renderTextField } from './form_helpers'
 import Button from '@material-ui/core/Button'
 
 
