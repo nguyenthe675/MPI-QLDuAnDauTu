@@ -2,8 +2,9 @@ import querystring from 'querystring';
 import AppService from '../../services/app.service';
 import { authType } from './auth.type';
 import { ApiClient } from '../../services/api';
+import { serviceUrl } from '../../config';
 
-let client = new ApiClient('http://localhost/EPS.QLTS.Services.WebAPI/');
+let client = new ApiClient(serviceUrl);
 
 export function signinUser({ email, password }) {
 

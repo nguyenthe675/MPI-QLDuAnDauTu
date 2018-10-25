@@ -8,10 +8,10 @@ export default {
         return client.get('/users');
     },
     allPage(data) {
-        return client.post('/User/GetAllUsers', data);
+        return client.post('/DanhSachTaiSan/GetAllTaiSan', data);
     },
     totalPage() {
-        return client.post('/User/GetTotalUsers');
+        return client.post('/DanhSachTaiSan/GetTotalTaiSan');
     },
     find(userId) {
         return client.get(`/users/${userId}`);

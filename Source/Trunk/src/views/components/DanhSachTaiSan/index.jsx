@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
-import UserService from '../../../../services/user.service';
-import Table from '../../UI/Table';
+import Service from '../../../services/danhsachtaisan.service';
+import Table from '../UI/Table';
 
 
 const columns = [
@@ -29,7 +29,7 @@ const columns = [
     }
 ];
 
-class ListUser extends React.Component {
+class DanhSachTaiSan extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -47,11 +47,16 @@ class ListUser extends React.Component {
         let data = {
             page: state.page,
             pageSize: state.pageSize,
-            sortExpression: "Username asc",
+            predicate: {
+                advanceSearchInfo: {
+                    DonviId: "64176917-9c65-45ef-a5c7-965c44057f5a"
+                }
+            },
+            sortExpression: "TrangThai asc",
         }
 
-        UserService.allPage(data).then(res => {
-            UserService.totalPage().then(total => {
+        Service.allPage(data).then(res => {
+            Service.totalPage().then(total => {
                 let pages = Math.floor(total.data / state.pageSize);
                 this.setState({
                     data: res.data,
@@ -79,4 +84,4 @@ class ListUser extends React.Component {
     }
 }
 
-export default ListUser;
+export default DanhSachTaiSan;

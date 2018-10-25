@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
-import AppService from '../../../services/app.service';
+import AppService from '../../services/app.service';
 
 export const PrivateRoute = ({ component: ComposedComponent, permission: Permission, ...rest }) => {
 

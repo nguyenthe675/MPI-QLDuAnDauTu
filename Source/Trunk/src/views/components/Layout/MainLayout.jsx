@@ -4,8 +4,8 @@
 import React, { Component } from 'react'
 import DocumentTitle from "react-document-title"
 import LoadingBar from 'react-redux-loading-bar'
-import Header from '../Header'
-import Sidebar from '../Sidebar'
+import Header from './Header'
+import Sidebar from './Sidebar'
 
 class MainLayout extends Component {
 

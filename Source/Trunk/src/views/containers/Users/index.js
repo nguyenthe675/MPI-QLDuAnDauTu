@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MainLayout from "../../components/Layout/MainLayout";
-import Ribon from '../../components/Ribon';
+import Ribon from '../../components/UI/Ribon';
 // import UserList from '../../components/Users/UserList';
 import ListUser from '../../components/Users/ListUser';
 

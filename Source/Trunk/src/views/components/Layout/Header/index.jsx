@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserMenu from '../UserMenu';
+import UserMenu from './UserMenu';
 
 export default class Header extends Component {
 
@@ -25,7 +25,7 @@ export default class Header extends Component {
         return (
             <header className="main-header-top hidden-print">
                 <a href="index.html" className="logo">
-                    <span >Dự án đầu tư</span>
+                    <span >QUẢN LÝ TÀI SẢN</span>
                 </a>
                 <nav className="navbar navbar-static-top">
                     <a href="/" data-toggle="offcanvas" className="sidebar-toggle"></a>

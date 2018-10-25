@@ -1,42 +1,26 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import Loadable from 'react-loadable';
-import { PrivateRoute } from './views/components/PrivateRoute';
-
-import Dashboard from './views/containers/Dashboard';
-
-
-import Login from './views/containers/Authentication/signin';
-import Signout from './views/containers/Authentication/signout';
-import NotFound from './views/containers/Authentication/notfound';
-
-function Loading() {
-    return <div>Đang tải...</div>;
-}
-
-
-const Users = Loadable({
-    loader: () => import('./views/containers/Users'),
-    loading: Loading,
-});
-
-
-const routes = [
-    { path: '/', exact: true, name: 'Dashboard', component: Dashboard, permission: ['TS_DanhSachTaiSanDonVi'] },
-    { path: '/users', exact: true, name: 'Users', component: Users, permission: ['QTHT_QuanLyNguoiDung'] },
-];
+import { PrivateRoute } from './private.route';
+import routes from './route.loader';
+//Import Page
+import Dashboard from '../containers/Dashboard';
+import Login from '../containers/Authentication/signin';
+import Signout from '../containers/Authentication/signout';
+import NotFound from '../containers/Authentication/notfound';
 
 class Routes extends React.Component {
     render() {
         return (
             <Router>
                 <Switch>
+                    <PrivateRoute exact path="/" component={Dashboard} permission={['TS_001']} />
                     {
                         routes.map((route, index) => {
                             return (
                                 <PrivateRoute key={index} exact={route.exact} path={route.path} component={route.component} permission={route.permission} />
                             )
                         })
+
                     }
                     <Route path="/login" component={Login} />
                     <Route path="/signout" component={Signout} />

@@ -68,6 +68,12 @@ const menu1 = [
                 label: 'Nhật ký',
                 to: '#log',
             },
+            {
+                id: 71,
+                icon: 'icon-arrow-right',
+                label: 'Cấu hình quy trình động',
+                to: '#processcfg',
+            },
         ],
     },
     {
@@ -92,7 +98,7 @@ const menu1 = [
     {
         id: 15,
         icon: 'icon-book-open',
-        label: 'Quản lý dự án đầu tư',
+        label: 'Nghiệp vụ tài sản',
         content: [
             {
                 id: 16,
@@ -149,7 +155,7 @@ export default class Sidebar extends Component {
                         <div className="f-left image"><img src="assets/images/avatar-1.png" alt="User" className="img-circle" /></div>
                         <div className="f-left info">
                             <p>Administrator</p>
-                            <p className="designation">Quản lý dự án <i className="icofont icofont-caret-down m-l-5"></i></p>
+                            <p className="designation">Quản lý tài sản <i className="icofont icofont-caret-down m-l-5"></i></p>
                         </div>
                     </div>
                     <ul className="nav sidebar-menu extra-profile-list">
