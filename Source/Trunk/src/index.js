@@ -9,9 +9,9 @@ import { store } from './helpers';
 import appService from './services/app.service';
 
 if (appService.isLoggedIn()) {
-    store.dispatch({ type: authType.AUTH_USER })
+    store.dispatch({ type: authType.AUTH_USER });
 }
-
+//store.dispatch({ type: authType.AUTH_USER });
 ReactDOM.render(
     <Provider store={store}>
         <App />

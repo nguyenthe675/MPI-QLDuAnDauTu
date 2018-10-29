@@ -1,6 +1,8 @@
 import React from 'react';
 import Routes from './views/routes';
 import { ToastContainer } from 'react-toastify';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,14 +13,18 @@ import './assets/css/buttons.dataTables.min.css';
 import './assets/css/main.css';
 import './assets/css/responsive.css';
 import './assets/css/color/color-1.min.css';
-
+const theme = createMuiTheme({
+    typography: {
+        useNextVariants: true
+    }
+});
 class App extends React.Component {
     render() {
         return (
-            <React.Fragment>
+            <MuiThemeProvider theme={theme}>
                 <Routes />
                 <ToastContainer />
-            </React.Fragment>
+            </MuiThemeProvider>
         );
     }
 }

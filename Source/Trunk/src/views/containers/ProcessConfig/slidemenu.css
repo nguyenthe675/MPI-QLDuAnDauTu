@@ -1,0 +1,67 @@
+/*
+ Tree structure using CSS:
+ http://stackoverflow.com/questions/14922247/how-to-get-a-tree-in-html-using-pure-css
+*/
+.tree-style {
+  width: 20px;
+}
+.slidemenu, .slidemenu ul{
+  font: normal normal 14px/20px Helvetica, Arial, sans-serif;  
+  list-style-type: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+  position: relative;   
+  overflow:hidden;    
+  padding-bottom: 10px;
+}
+
+.slidemenu li{
+  margin: 0;
+  padding: 2px 15px;  
+  position: relative;   
+}
+.slidemenu li select {
+  float: left;
+  width: inherit !important;
+}
+.slidemenu li .btn-primary {
+  padding: 4px 6px;
+}
+.slidemenu li::before, .slidemenu li::after{
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+/* horizontal line on inner list items */
+.slidemenu li::before{
+  border-top: 1px solid #999;
+  top: 17px;
+  width: 10px;
+  height: 0;    
+}
+
+/* vertical line on list items */   
+.slidemenu li:after{
+  border-left: 1px solid #999;
+  height: 100%;
+  width: 0px;
+  top: -10px; 
+}
+
+/* lower line on list items from the first level because they don't have parents */
+.slidemenu > li::after{
+  top: 10px;
+}
+
+/* hide line from the last of the first level list items */
+.slidemenu > li:last-child::after{
+  display: none;
+}
+.slidemenu li.last:after {
+  top: -12px; 
+}
+.btn-danger, .btn-danger:focus, .btn-danger:hover, .btn-danger:active {
+  background-color: #ff52527a !important;
+    border-color: #ff52527a !important;
+}

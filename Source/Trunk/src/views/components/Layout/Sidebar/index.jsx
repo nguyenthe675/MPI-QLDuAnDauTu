@@ -16,8 +16,8 @@ const menu1 = [
             {
                 id: 3,
                 icon: 'icon-arrow-right',
-                label: 'Danh mục quốc gia',
-                to: '#quocgia',
+                label: 'Danh mục chức danh',
+                to: '#chucdanh',
             },
             {
                 id: 4,
@@ -37,6 +37,25 @@ const menu1 = [
                 label: 'Danh mục loại nguồn vốn',
                 to: '#nguonvon',
             },
+        ],
+    },
+    {
+        id: 15,
+        icon: 'icon-book-open',
+        label: 'Nghiệp vụ tài sản',
+        content: [
+            {
+                id: 16,
+                icon: 'icon-arrow-right',
+                label: 'Nhóm người dùng',
+                to: '#role',
+            },
+            {
+                id: 17,
+                icon: 'icon-arrow-right',
+                label: 'Người dùng',
+                to: '#user',
+            }
         ],
     },
     {
@@ -95,25 +114,7 @@ const menu1 = [
             }
         ],
     },
-    {
-        id: 15,
-        icon: 'icon-book-open',
-        label: 'Nghiệp vụ tài sản',
-        content: [
-            {
-                id: 16,
-                icon: 'icon-arrow-right',
-                label: 'Nhóm người dùng',
-                to: '#role',
-            },
-            {
-                id: 17,
-                icon: 'icon-arrow-right',
-                label: 'Người dùng',
-                to: '#user',
-            }
-        ],
-    },
+
     {
         id: 18,
         icon: 'icon-chart',

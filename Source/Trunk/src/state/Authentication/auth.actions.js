@@ -4,7 +4,7 @@ import { authType } from './auth.type';
 import { ApiClient } from '../../services/api';
 import { serviceUrl } from '../../config';
 
-let client = new ApiClient(serviceUrl);
+let client = new ApiClient(serviceUrl, false, true);
 
 export function signinUser({ email, password }) {
 

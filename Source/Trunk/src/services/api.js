@@ -8,19 +8,18 @@ axios.defaults.baseURL = apiUrl;
  * Create a new Axios client instance
  * @see https://github.com/mzabriskie/axios#creating-an-instance
  */
-const getClient = (baseUrl = null, showLoading = true) => {
+const getClient = (baseUrl = null, auth = true, showLoading = true) => {
 
     const options = {
         baseURL: baseUrl
     };
 
-    if (AppService.isLoggedIn()) {
+    if (auth === true && AppService.isLoggedIn()) {
         var token = AppService.getAccessToken();
         options.headers = {
             Authorization: `Bearer ${token.access_token}`,
         };
     }
-
     const client = axios.create(options);
 
     // Add a request interceptor
@@ -63,8 +62,8 @@ const getClient = (baseUrl = null, showLoading = true) => {
 };
 
 class ApiClient {
-    constructor(baseUrl = null, showLoading = true) {
-        this.client = getClient(baseUrl, showLoading);
+    constructor(baseUrl = null, auth = true, showLoading = true) {
+        this.client = getClient(baseUrl, auth, showLoading);
     }
 
     get(url, conf = {}) {
@@ -119,43 +118,43 @@ export { ApiClient };
 export default {
     // Provide request methods with the default base_url
     get(url, conf = {}) {
-        return getClient().get(url, conf)
+        return getClient(apiUrl).get(url, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
 
     delete(url, conf = {}) {
-        return getClient().delete(url, conf)
+        return getClient(apiUrl).delete(url, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
 
     head(url, conf = {}) {
-        return getClient().head(url, conf)
+        return getClient(apiUrl).head(url, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
 
     options(url, conf = {}) {
-        return getClient().options(url, conf)
+        return getClient(apiUrl).options(url, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
 
     post(url, data = {}, conf = {}) {
-        return getClient().post(url, data, conf)
+        return getClient(apiUrl).post(url, data, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
 
     put(url, data = {}, conf = {}) {
-        return getClient().put(url, data, conf)
+        return getClient(apiUrl).put(url, data, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
 
     patch(url, data = {}, conf = {}) {
-        return getClient().patch(url, data, conf)
+        return getClient(apiUrl).patch(url, data, conf)
             .then(response => Promise.resolve(response))
             .catch(error => Promise.reject(error));
     },
