@@ -30,6 +30,7 @@ const trangthais = [
     { TrangThaiId: 'TT4', Title: 'Hồ sơ chờ bổ sung chờ tiếp nhận' },
     { TrangThaiId: 'TT5', Title: 'Hồ sơ chờ phân công xử lý' },
     { TrangThaiId: 'TT6', Title: 'Hồ sơ chờ thẩm định' },
+    { TrangThaiId: 'TT8', Title: 'Hồ sơ đã rút' },
     { TrangThaiId: 'TT21', Title: 'Hồ sơ chờ thẩm định lại' },
     { TrangThaiId: 'TT7', Title: 'Hồ sơ bị từ chối' },
     { TrangThaiId: 'TT9', Title: 'Hồ sơ đã được công nhận' },
@@ -61,6 +62,7 @@ const actions = [
     { ActionId: 'A14', Title: 'Phê duyệt từ chối', Type: 3 },
     { ActionId: 'A15', Title: 'Đồng ý thẩm định', Type: 3 },
     { ActionId: 'A16', Title: 'Từ chối thẩm định', Type: 3 },
+    { ActionId: 'A17', Title: 'Rút hồ sơ', Type: 3 },
 ];
 
 const getRoleById = (id) => {
