@@ -1,140 +1,8 @@
 import React, { Component } from 'react'
 import MetisMenu from 'react-metismenu';
 import '../Sidebar/react-metismenu-standart.css';
-const menu1 = [
-    {
-        id: 1,
-        icon: 'icon-speedometer',
-        label: 'Tổng quan',
-        to: '/',
-    },
-    {
-        id: 2,
-        icon: 'icon-briefcase',
-        label: 'Quản lý danh mục',
-        content: [
-            {
-                id: 3,
-                icon: 'icon-arrow-right',
-                label: 'Danh mục chức danh',
-                to: '#chucdanh',
-            },
-            {
-                id: 4,
-                icon: 'icon-arrow-right',
-                label: 'Danh mục địa bàn',
-                to: '#diaban',
-            },
-            {
-                id: 5,
-                icon: 'icon-arrow-right',
-                label: 'Danh mục loại dự án',
-                to: '#duan',
-            },
-            {
-                id: 6,
-                icon: 'icon-arrow-right',
-                label: 'Danh mục loại nguồn vốn',
-                to: '#nguonvon',
-            },
-        ],
-    },
-    {
-        id: 15,
-        icon: 'icon-book-open',
-        label: 'Nghiệp vụ tài sản',
-        content: [
-            {
-                id: 16,
-                icon: 'icon-arrow-right',
-                label: 'Nhóm người dùng',
-                to: '#role',
-            },
-            {
-                id: 17,
-                icon: 'icon-arrow-right',
-                label: 'Người dùng',
-                to: '#user',
-            }
-        ],
-    },
-    {
-        id: 7,
-        icon: 'icon-list',
-        label: 'Quản trị hệ thống',
-        content: [
-            {
-                id: 8,
-                icon: 'icon-arrow-right',
-                label: 'Nhóm người dùng',
-                to: '#role',
-            },
-            {
-                id: 9,
-                icon: 'icon-arrow-right',
-                label: 'Người dùng',
-                to: '#users',
-            },
-            {
-                id: 10,
-                icon: 'icon-arrow-right',
-                label: 'Tham số hệ thống',
-                to: '#syspra',
-            },
-            {
-                id: 11,
-                icon: 'icon-arrow-right',
-                label: 'Nhật ký',
-                to: '#log',
-            },
-            {
-                id: 71,
-                icon: 'icon-arrow-right',
-                label: 'Cấu hình quy trình động',
-                to: '#processcfg',
-            },
-        ],
-    },
-    {
-        id: 12,
-        icon: 'icon-calendar',
-        label: 'Tiện ích',
-        content: [
-            {
-                id: 13,
-                icon: 'icon-arrow-right',
-                label: 'Nhóm người dùng',
-                to: '#role',
-            },
-            {
-                id: 14,
-                icon: 'icon-arrow-right',
-                label: 'Người dùng',
-                to: '#user',
-            }
-        ],
-    },
-
-    {
-        id: 18,
-        icon: 'icon-chart',
-        label: 'Báo cáo',
-        content: [
-            {
-                id: 19,
-                icon: 'icon-arrow-right',
-                label: 'Nhóm người dùng',
-                to: '#role',
-            },
-            {
-                id: 20,
-                icon: 'icon-arrow-right',
-                label: 'Người dùng',
-                to: '#user',
-            }
-        ],
-    },
-];
+import StorageService from '../../../../services/StorageService';
+import MenuTree from './MenuTree';
 
 export default class Sidebar extends Component {
 
@@ -142,10 +10,34 @@ export default class Sidebar extends Component {
         super(props);
 
         this.state = {
-            menu: menu1
+            menu: []
         }
     }
+    componentDidMount() {
+        this.getTree();
+    }
+    filterTree = (menu) => {
+        let kq = menu.filter((item) => {
+            if (StorageService.checkPermission(item.permission)) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        return kq;
+    }
 
+    getTree = () => {
+        let kq = this.filterTree(MenuTree);
+        kq.forEach((item) => {
+            if (item.content && item.content.length > 0) {
+                item.content = this.filterTree(item.content);
+            }
+        });
+        this.setState({
+            menu: kq
+        })
+    }
     render() {
         // let params = window.location.href.split("#");
         return (

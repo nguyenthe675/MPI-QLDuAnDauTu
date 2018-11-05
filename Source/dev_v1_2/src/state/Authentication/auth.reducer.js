@@ -3,7 +3,7 @@ import { authType } from './auth.type';
 export default function authReducer(state = {}, action) {
     switch (action.type) {
         case authType.AUTH_USER:
-            return { ...state, error: '', authenticated: true, avatar: '' }
+            return { ...state, error: '', authenticated: true, currentUser: {}, avatar: '' }
         case authType.UNAUTH_USER:
             return { ...state, authenticated: false }
         case authType.AUTH_ERROR:

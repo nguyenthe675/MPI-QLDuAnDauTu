@@ -30,8 +30,8 @@ export function signinUser({ username, password }) {
                 // -Save the JWT token
                 StorageService.setAccessToken(response.data);
                 // -if request is good, we need to update state to indicate user is authenticated
-                dispatch({ type: authType.AUTH_USER })
-                dispatch(loginSuccess(response.data.avatar));
+                dispatch({ type: authType.AUTH_USER });
+                dispatch(loginSuccess(response.data));
             })
 
             // If request is bad...
@@ -77,10 +77,11 @@ export function authError(error) {
     }
 }
 
-export function loginSuccess(avatar) {
+export function loginSuccess(data) {
     return {
         type: authType.AUTH_USER,
-        avatar: avatar
+        currentUser: data,
+        avatar: data.avatar
     }
 }
 // export function fetchMessage() {

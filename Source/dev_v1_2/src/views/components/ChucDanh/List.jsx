@@ -46,7 +46,7 @@ class ListChucDanh extends React.Component {
         let data = {
             page: state.page,
             pageSize: state.pageSize,
-            sortExpression: "Id asc",
+            sortExpression: "maChucDanh asc",
         }
 
         svc.allPage(data).then(res => {
@@ -64,11 +64,10 @@ class ListChucDanh extends React.Component {
             <div>
                 <Table
                     columns={columns}
-                    manual // Forces table not to paginate or sort automatically, so we can handle it server-side
                     data={data}
-                    pages={pages} // Display the total number of pages
-                    loading={loading} // Display the loading overlay when we need it
-                    onFetchData={this.fetchData} // Request new data when things change
+                    pages={pages} // Tổng số trang
+                    loading={loading} // Hiển thị loading trên table khi load dữ liệu
+                    onFetchData={this.fetchData} // Get change data
                     defaultPageSize={10}
                 />
             </div>
