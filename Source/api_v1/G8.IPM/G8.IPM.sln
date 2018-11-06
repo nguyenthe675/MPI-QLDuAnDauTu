@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G8.IPM.Common", "G8.IPM.Common\G8.IPM.Common.csproj", "{300CC7F5-31A6-44B7-8D90-F354AC34B936}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G8.IPM.Service", "G8.IPM.Service\G8.IPM.Service.csproj", "{7EB49CE5-4C7A-46D0-B381-EB19A5F8DFAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G8.IPM.Web", "G8.IPM.Web\G8.IPM.Web.csproj", "{9FDD5A55-9084-4992-918D-02D0E6B0FAD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G8.IPM.API", "G8.IPM.API\G8.IPM.API.csproj", "{3BBB1F48-61A9-47DA-B377-6335075DCF8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{9FDD5A55-9084-4992-918D-02D0E6B0FAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FDD5A55-9084-4992-918D-02D0E6B0FAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FDD5A55-9084-4992-918D-02D0E6B0FAD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BBB1F48-61A9-47DA-B377-6335075DCF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBB1F48-61A9-47DA-B377-6335075DCF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBB1F48-61A9-47DA-B377-6335075DCF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBB1F48-61A9-47DA-B377-6335075DCF8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {135A0C50-0F2F-477E-A2D6-0BCE443CFCF3}
 	EndGlobalSection
 EndGlobal

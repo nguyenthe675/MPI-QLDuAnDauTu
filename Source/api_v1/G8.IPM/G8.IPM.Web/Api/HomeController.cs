@@ -7,7 +7,7 @@ using System.Web.Http;
 using G8.IPM.Service;
 using G8.IPM.Web.Infrastructure.Core;
 
-namespace TeduShop.Web.Api
+namespace G8.IPM.Web.Api
 {
     [RoutePrefix("api/home")]
     [Authorize]

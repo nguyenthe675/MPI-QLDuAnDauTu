@@ -22,8 +22,8 @@
         protected override void Seed(G8.IPM.Data.IPMDbContext context)
         {
 
-            CreateConfigTitle(context);
-            CreateUser(context);
+            //CreateConfigTitle(context);
+            //CreateUser(context);
 
         }
         private void CreateConfigTitle(IPMDbContext context)
