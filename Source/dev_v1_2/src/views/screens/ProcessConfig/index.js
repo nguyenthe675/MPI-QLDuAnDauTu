@@ -9,58 +9,54 @@ import './slidemenu.css';
 import chart1 from './chart-flow-1.svg';
 import chart2 from './chart-flow-2.svg';
 const thuTucs = [
-    { ThuTucId: 'TT1', TenThuTuc: 'Cấp thẻ Kiểm định viên kiểm định chất lượng giáo dục' },
-    { ThuTucId: 'TT2', TenThuTuc: 'Cấp thẻ Kiểm định viên kiểm định chất lượng giáo dục' },
-    { ThuTucId: 'TT3', TenThuTuc: 'Công nhận văn bằng tốt nghiệp trung cấp chuyên nghiệp, bằng tốt nghiệp cao đẳng, bằng tốt nghiệp đại học, bằng thạc sĩ và bằng tiến sĩ do cơ sở nước ngoài cấp' },
-    { ThuTucId: 'TT4', TenThuTuc: 'Cấp giấy chứng nhận đăng ký hoạt động giáo dục nghề nghiệp đối với nhóm ngành đào tạo giáo viên trình độ cao đẳng' },
-    { ThuTucId: 'TT5', TenThuTuc: 'Công nhận trường cao đẳng tư thục hoạt động không vì lợi nhuận' },
+    { ThuTucId: '34', TenThuTuc: 'Cấp thẻ Kiểm định viên kiểm định chất lượng giáo dục' },
+    { ThuTucId: '32', TenThuTuc: 'Công nhận văn bằng tốt nghiệp trung cấp chuyên nghiệp, bằng tốt nghiệp cao đẳng, bằng tốt nghiệp đại học, bằng thạc sĩ và bằng tiến sĩ do cơ sở nước ngoài cấp' },
 ];
 const roles = [
-    { RoleId: 'R1', RoleName: 'Cá nhân, tổ chức' },
-    { RoleId: 'R2', RoleName: 'Bộ phận một cửa' },
-    { RoleId: 'R3', RoleName: 'Lãnh đạo xử lý' },
-    { RoleId: 'R4', RoleName: 'Chuyên viên xử lý' },
-    { RoleId: 'R5', RoleName: 'Lãnh đạo vụ cục' },
+    { RoleId: '1', RoleName: 'Cá nhân, tổ chức' },
+    { RoleId: '2', RoleName: 'Bộ phận một cửa' },
+    { RoleId: '3', RoleName: 'Lãnh đạo xử lý' },
+    { RoleId: '4', RoleName: 'Chuyên viên xử lý' },
+    { RoleId: '5', RoleName: 'Lãnh đạo vụ cục' },
 ];
 
 const trangthais = [
-    { TrangThaiId: 'TT1', Title: 'Hồ sơ vừa khai báo' },
-    { TrangThaiId: 'TT2', Title: 'Hồ sơ chờ tiếp nhận' },
-    { TrangThaiId: 'TT3', Title: 'Hồ sơ yêu cầu bổ sung' },
-    { TrangThaiId: 'TT4', Title: 'Hồ sơ chờ bổ sung chờ tiếp nhận' },
-    { TrangThaiId: 'TT5', Title: 'Hồ sơ chờ phân công xử lý' },
-    { TrangThaiId: 'TT6', Title: 'Hồ sơ chờ thẩm định' },
-    { TrangThaiId: 'TT21', Title: 'Hồ sơ chờ thẩm định lại' },
-    { TrangThaiId: 'TT7', Title: 'Hồ sơ bị từ chối' },
-    { TrangThaiId: 'TT9', Title: 'Hồ sơ đã được công nhận' },
-    { TrangThaiId: 'TT12', Title: 'Thông báo lệ phí' },
-    { TrangThaiId: 'TT15', Title: 'Hồ sơ chờ trả kết quả' },
-    { TrangThaiId: 'TT16', Title: 'Hồ sơ thẩm định đạt' },
-    { TrangThaiId: 'TT17', Title: 'Hồ sơ thẩm định từ chối' },
-    { TrangThaiId: 'TT18', Title: 'Hồ sơ thẩm định bổ sung' },
-    { TrangThaiId: 'TT19', Title: 'Hồ sơ thẩm định đạt chờ phê duyệt' },
-    { TrangThaiId: 'TT20', Title: 'Hồ sơ thẩm định từ chối chờ phê duyệt' },
-    { TrangThaiId: 'TT22', Title: 'Hồ sơ thẩm định đạt xem xét lại' },
-    { TrangThaiId: 'TT23', Title: 'Hồ sơ thẩm định từ chối xem xét lại' },
+    { TrangThaiId: '1', Title: 'Hồ sơ vừa khai báo' },
+    { TrangThaiId: '2', Title: 'Hồ sơ chờ tiếp nhận' },
+    { TrangThaiId: '3', Title: 'Hồ sơ yêu cầu bổ sung' },
+    { TrangThaiId: '4', Title: 'Hồ sơ chờ tiếp nhận bổ sung' },
+    { TrangThaiId: '5', Title: 'Hồ sơ chờ phân công xử lý' },
+    { TrangThaiId: '6', Title: 'Hồ sơ bị từ chối' },
+    { TrangThaiId: '7', Title: 'Hồ sơ chờ trả kết quả thẩm định' },
+    { TrangThaiId: '8', Title: 'Hồ sơ đã rút' },
+    { TrangThaiId: '9', Title: 'Hồ sơ chờ nộp lệ phí' },
+    { TrangThaiId: '10', Title: 'Hồ sơ chờ trả kết quả công nhận' },
+    { TrangThaiId: '11', Title: 'Hồ sơ được công nhận' },
+    { TrangThaiId: '12', Title: 'Hồ sơ thẩm định là yêu cầu bổ sung' },
+    { TrangThaiId: '13', Title: 'Hồ sơ chờ trả quyết định phê duyệt' },
+    { TrangThaiId: '14', Title: 'Hồ sơ thẩm định là từ chối' },
+    { TrangThaiId: '15', Title: 'Hồ sơ thẩm định là đạt' },
+    { TrangThaiId: '16', Title: 'Hồ sơ chờ trả kết quả thẩm định lại' },
+    { TrangThaiId: '17', Title: 'Hồ sơ chờ xem xét lại kết quả thẩm định' },
+    { TrangThaiId: '20', Title: 'Hồ sơ chờ ký duyệt từ chối' },
+    { TrangThaiId: '21', Title: 'Hồ sơ chờ ký duyệt công nhận' },
 ];
 
 const actions = [
-    { ActionId: 'A2', Title: 'Gửi hồ sơ', Type: 2 },
-    { ActionId: 'A3', Title: 'Từ chối hồ sơ', Type: 2 },
-    { ActionId: 'A4', Title: 'Yêu cầu bổ sung hồ sơ', Type: 1 },
-    { ActionId: 'A5', Title: 'Tiếp nhận hồ sơ', Type: 3 },
-    { ActionId: 'A6', Title: 'Đồng ý thẩm định', Type: 1 },
-    { ActionId: 'A7', Title: 'Từ chối thẩm định', Type: 3 },
-    { ActionId: 'A8', Title: 'Thẩm định đạt', Type: 1 },
-    { ActionId: 'A9', Title: 'Thẩm định từ chối', Type: 3 },
-    { ActionId: 'A9', Title: 'Thẩm định yêu cầu bổ sung', Type: 3 },
-    { ActionId: 'A10', Title: 'Phê duyệt hồ sơ', Type: 1 },
-    { ActionId: 'A11', Title: 'Phê duyệt từ chối', Type: 3 },
-    { ActionId: 'A12', Title: 'Bổ sung hồ sơ', Type: 3 },
-    { ActionId: 'A13', Title: 'Phân công xử lý hồ sơ', Type: 3 },
-    { ActionId: 'A14', Title: 'Phê duyệt từ chối', Type: 3 },
-    { ActionId: 'A15', Title: 'Đồng ý thẩm định', Type: 3 },
-    { ActionId: 'A16', Title: 'Từ chối thẩm định', Type: 3 },
+    { ActionId: '1', Title: 'Gửi hồ sơ', Type: 2 },
+    { ActionId: '2', Title: 'Xóa hồ sơ', Type: 2 },
+    { ActionId: '3', Title: 'Rút hồ sơ', Type: 1 },
+    { ActionId: '4', Title: 'Tiếp nhận hồ sơ', Type: 3 },
+    { ActionId: '5', Title: 'Yêu cầu bổ sung hồ sơ', Type: 1 },
+    { ActionId: '6', Title: 'Từ chối hồ sơ', Type: 3 },
+    { ActionId: '7', Title: 'Nộp lệ phí', Type: 1 },
+    { ActionId: '8', Title: 'Trả kết quả phê duyệt', Type: 3 },
+    { ActionId: '9', Title: 'Phân công xử lý hồ sơ', Type: 3 },
+    { ActionId: '10', Title: 'Phê duyệt kết quả thẩm định', Type: 1 },
+    { ActionId: '11', Title: 'Trả kết quả thẩm định', Type: 3 },
+    { ActionId: '12', Title: 'Trình lãnh đạo', Type: 3 },
+    { ActionId: '13', Title: 'Phê duyệt từ chối', Type: 3 },
+    { ActionId: '14', Title: 'Phê duyệt công nhận', Type: 3 },
 ];
 
 const getRoleById = (id) => {
@@ -336,190 +332,187 @@ export default class Users extends React.Component {
             classChart += ' slidemenu';
         }
         return (
-            <MainLayout {...this.props} className={'listuser listapp'}>
-                <Ribon breadCrumb={[{ name: 'Cấu hình quy trình động' }]} />
 
-                <div className="row">
-                    <div className="col-sm-12">
-                        <div className="card">
-                            <div className="card-header">
-                                <h5 className="card-header-text">Cấu hình quy trình động</h5>
-                                <div className="f-right">
-                                    <button className="btn btn-inverse-success waves-effect waves-light" onClick={this.initConfig}>
-                                        <i className="icofont icofont-code-alt"></i> Khởi tạo dữ liệu
+            <div className="row">
+                <div className="col-sm-12">
+                    <div className="card">
+                        <div className="card-header">
+                            <h5 className="card-header-text">Cấu hình quy trình động</h5>
+                            <div className="f-right">
+                                <button className="btn btn-inverse-success waves-effect waves-light" onClick={this.initConfig}>
+                                    <i className="icofont icofont-code-alt"></i> Khởi tạo dữ liệu
                                     </button>
-                                    <button className="btn btn-inverse-success waves-effect waves-light" onClick={this.getData}>
-                                        <i className="icofont icofont-code-alt"></i> Lưu dữ liệu localStorage
+                                <button className="btn btn-inverse-success waves-effect waves-light" onClick={this.getData}>
+                                    <i className="icofont icofont-code-alt"></i> Lưu dữ liệu localStorage
                                     </button>
-                                    <button className="btn btn-inverse-success waves-effect waves-light" onClick={this.initData}>
-                                        <i className="icofont icofont-code-alt"></i> Lấy dữ liệu từ localStorage
+                                <button className="btn btn-inverse-success waves-effect waves-light" onClick={this.initData}>
+                                    <i className="icofont icofont-code-alt"></i> Lấy dữ liệu từ localStorage
                                     </button>
-                                </div>
                             </div>
-                            <div className="card-block">
-                                <div className="form-group row">
-                                    <div className="col-md-12">
-                                        <label><b>Thực hiện cấu hình:</b></label>
-                                        <button className="btn btn-inverse-success waves-effect waves-light" onClick={() => { this.setChart(true) }}>
-                                            <img src={chart1} className="tree-style" alt="logo" />
-                                        </button>
-                                        <button className="btn btn-inverse-success waves-effect waves-light" onClick={() => this.setChart(false)}>
-                                            <img src={chart2} className="tree-style" alt="logo" />
-                                        </button>
-                                        <br />
-                                    </div>
-                                    <div className={classChart}>
-                                        <ul>
-                                            <li>
-                                                <div className="node">
-                                                    <button className="btn btn-success waves-effect waves-light close-node"><i className=" icofont icofont-ui-settings"></i></button>
-                                                    <select
-                                                        className="form-control"
-                                                        onChange={this.onHandleChange}
-                                                        name="thutucs"
-                                                        value={this.state.config.thutucid}
-                                                    >
-                                                        <option value="">Chọn thủ tục</option>
+                        </div>
+                        <div className="card-block">
+                            <div className="form-group row">
+                                <div className="col-md-12">
+                                    <label><b>Thực hiện cấu hình:</b></label>
+                                    <button className="btn btn-inverse-success waves-effect waves-light" onClick={() => { this.setChart(true) }}>
+                                        <img src={chart1} className="tree-style" alt="logo" />
+                                    </button>
+                                    <button className="btn btn-inverse-success waves-effect waves-light" onClick={() => this.setChart(false)}>
+                                        <img src={chart2} className="tree-style" alt="logo" />
+                                    </button>
+                                    <br />
+                                </div>
+                                <div className={classChart}>
+                                    <ul>
+                                        <li>
+                                            <div className="node">
+                                                <button className="btn btn-success waves-effect waves-light close-node"><i className=" icofont icofont-ui-settings"></i></button>
+                                                <select
+                                                    className="form-control"
+                                                    onChange={this.onHandleChange}
+                                                    name="thutucs"
+                                                    value={this.state.config.thutucid}
+                                                >
+                                                    <option value="">Chọn thủ tục</option>
+                                                    {
+                                                        thuTucs.map((thutuc, index) => {
+                                                            return <option key={index} value={thutuc.ThuTucId}>{thutuc.TenThuTuc}</option>
+                                                        })
+                                                    }
+                                                </select>
+                                            </div>
+                                            {
+                                                this.state.khoitao ?
+                                                    <ul >
                                                         {
-                                                            thuTucs.map((thutuc, index) => {
-                                                                return <option key={index} value={thutuc.ThuTucId}>{thutuc.TenThuTuc}</option>
-                                                            })
-                                                        }
-                                                    </select>
-                                                </div>
-                                                {
-                                                    this.state.khoitao ?
-                                                        <ul >
-                                                            {
-                                                                this.state.config.childrens.map((chilrole, index) => {
-                                                                    return (
-                                                                        <li key={index}>
-                                                                            <div className="node">
-                                                                                <button className="btn btn-danger waves-effect waves-light close-node"><i className=" icofont icofont-close"></i></button>
-                                                                                <select
-                                                                                    className="form-control"
-                                                                                    onChange={this.onRoleChange}
-                                                                                    name={chilrole.id}
-                                                                                    value={chilrole.roleid}
-                                                                                >
-                                                                                    <option value="">Chọn bộ phận</option>
+                                                            this.state.config.childrens.map((chilrole, index) => {
+                                                                return (
+                                                                    <li key={index}>
+                                                                        <div className="node">
+                                                                            <button className="btn btn-danger waves-effect waves-light close-node"><i className=" icofont icofont-close"></i></button>
+                                                                            <select
+                                                                                className="form-control"
+                                                                                onChange={this.onRoleChange}
+                                                                                name={chilrole.id}
+                                                                                value={chilrole.roleid}
+                                                                            >
+                                                                                <option value="">Chọn bộ phận</option>
+                                                                                {
+                                                                                    roles.map((role, index) => {
+                                                                                        return <option key={index} value={role.RoleId}>{role.RoleName}</option>
+                                                                                    })
+                                                                                }
+                                                                            </select>
+                                                                        </div>
+                                                                        {
+                                                                            _.isArray(chilrole.childrens) && chilrole.childrens.length > 0 ?
+                                                                                <ul className="childs">
                                                                                     {
-                                                                                        roles.map((role, index) => {
-                                                                                            return <option key={index} value={role.RoleId}>{role.RoleName}</option>
-                                                                                        })
-                                                                                    }
-                                                                                </select>
-                                                                            </div>
-                                                                            {
-                                                                                _.isArray(chilrole.childrens) && chilrole.childrens.length > 0 ?
-                                                                                    <ul className="childs">
-                                                                                        {
-                                                                                            chilrole.childrens.map((childtrangthai, index) => {
-                                                                                                return (
-                                                                                                    <li key={index}>
-                                                                                                        <div className="node">
-                                                                                                            <button className="btn btn-danger waves-effect waves-light close-node"><i className=" icofont icofont-close"></i></button>
-                                                                                                            <select
-                                                                                                                className="form-control"
-                                                                                                                onChange={this.onTrangThaiChange}
-                                                                                                                name={childtrangthai.id + '|' + chilrole.id}
-                                                                                                                value={childtrangthai.trangthaiid}
-                                                                                                            >
-                                                                                                                <option value="">Chọn trạng thái</option>
+                                                                                        chilrole.childrens.map((childtrangthai, index) => {
+                                                                                            return (
+                                                                                                <li key={index}>
+                                                                                                    <div className="node">
+                                                                                                        <button className="btn btn-danger waves-effect waves-light close-node"><i className=" icofont icofont-close"></i></button>
+                                                                                                        <select
+                                                                                                            className="form-control"
+                                                                                                            onChange={this.onTrangThaiChange}
+                                                                                                            name={childtrangthai.id + '|' + chilrole.id}
+                                                                                                            value={childtrangthai.trangthaiid}
+                                                                                                        >
+                                                                                                            <option value="">Chọn trạng thái</option>
+                                                                                                            {
+                                                                                                                trangthais.map((trangthai, index) => {
+                                                                                                                    return <option key={index} value={trangthai.TrangThaiId}>{trangthai.Title}</option>
+                                                                                                                })
+                                                                                                            }
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                    {
+                                                                                                        _.isArray(childtrangthai.childrens) && childtrangthai.childrens.length > 0 ?
+                                                                                                            <ul>
                                                                                                                 {
-                                                                                                                    trangthais.map((trangthai, index) => {
-                                                                                                                        return <option key={index} value={trangthai.TrangThaiId}>{trangthai.Title}</option>
+                                                                                                                    childtrangthai.childrens.map((childaction, index) => {
+                                                                                                                        return (
+                                                                                                                            <li key={index}>
+                                                                                                                                <div className="node">
+                                                                                                                                    <button className="btn btn-danger waves-effect waves-light close-node"><i className=" icofont icofont-close"></i></button>
+                                                                                                                                    <select
+                                                                                                                                        className="form-control"
+                                                                                                                                        onChange={this.onActionChange}
+                                                                                                                                        name={childtrangthai.id + '|' + chilrole.id + '|' + childaction.id}
+                                                                                                                                        value={childaction.actionid}
+                                                                                                                                    >
+                                                                                                                                        <option value="">Chọn tác vụ</option>
+                                                                                                                                        {
+                                                                                                                                            actions.map((action, index) => {
+                                                                                                                                                return <option key={index} value={action.ActionId}>{action.Title}</option>
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    </select>
+                                                                                                                                    <select
+                                                                                                                                        className="form-control"
+                                                                                                                                        onChange={this.onTrangThaiSauChange}
+                                                                                                                                        name={childtrangthai.id + '|' + chilrole.id + '|' + childaction.id}
+                                                                                                                                        value={childaction.trangthaiid}
+                                                                                                                                    >
+                                                                                                                                        <option value="">Chọn trạng thái kết thúc</option>
+                                                                                                                                        {
+                                                                                                                                            trangthais.map((trangthai, index) => {
+                                                                                                                                                return <option key={index} value={trangthai.TrangThaiId}>{trangthai.Title}</option>
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    </select>
+                                                                                                                                </div>
+                                                                                                                            </li>
+                                                                                                                        )
                                                                                                                     })
                                                                                                                 }
-                                                                                                            </select>
-                                                                                                        </div>
-                                                                                                        {
-                                                                                                            _.isArray(childtrangthai.childrens) && childtrangthai.childrens.length > 0 ?
-                                                                                                                <ul>
-                                                                                                                    {
-                                                                                                                        childtrangthai.childrens.map((childaction, index) => {
-                                                                                                                            return (
-                                                                                                                                <li key={index}>
-                                                                                                                                    <div className="node">
-                                                                                                                                        <button className="btn btn-danger waves-effect waves-light close-node"><i className=" icofont icofont-close"></i></button>
-                                                                                                                                        <select
-                                                                                                                                            className="form-control"
-                                                                                                                                            onChange={this.onActionChange}
-                                                                                                                                            name={childtrangthai.id + '|' + chilrole.id + '|' + childaction.id}
-                                                                                                                                            value={childaction.actionid}
-                                                                                                                                        >
-                                                                                                                                            <option value="">Chọn tác vụ</option>
-                                                                                                                                            {
-                                                                                                                                                actions.map((action, index) => {
-                                                                                                                                                    return <option key={index} value={action.ActionId}>{action.Title}</option>
-                                                                                                                                                })
-                                                                                                                                            }
-                                                                                                                                        </select>
-                                                                                                                                        <select
-                                                                                                                                            className="form-control"
-                                                                                                                                            onChange={this.onTrangThaiSauChange}
-                                                                                                                                            name={childtrangthai.id + '|' + chilrole.id + '|' + childaction.id}
-                                                                                                                                            value={childaction.trangthaiid}
-                                                                                                                                        >
-                                                                                                                                            <option value="">Chọn trạng thái kết thúc</option>
-                                                                                                                                            {
-                                                                                                                                                trangthais.map((trangthai, index) => {
-                                                                                                                                                    return <option key={index} value={trangthai.TrangThaiId}>{trangthai.Title}</option>
-                                                                                                                                                })
-                                                                                                                                            }
-                                                                                                                                        </select>
-                                                                                                                                    </div>
-                                                                                                                                </li>
-                                                                                                                            )
-                                                                                                                        })
-                                                                                                                    }
-                                                                                                                    <li className="last">
-                                                                                                                        <div className="node"><button className="btn btn-sm btn-primary waves-effect waves-light" onClick={() => { self.onAddAction(chilrole.id, childtrangthai.id) }}><i className="icofont icofont-plus"></i></button>
-                                                                                                                        </div>
-                                                                                                                    </li>
-                                                                                                                </ul>
-                                                                                                                :
-                                                                                                                <span className="require-mess">(required)</span>
-                                                                                                        }
-                                                                                                    </li>
-                                                                                                )
-                                                                                            })
-                                                                                        }
-                                                                                        <li className="last">
-                                                                                            <div className="node"><button className='btn btn-sm btn-primary waves-effect waves-light ' name={chilrole.id} onClick={() => { self.onAddTrangThai(chilrole.id) }}><i className="icofont icofont-plus"></i></button>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                    : <span className="require-mess">(required)</span>
-                                                                            }
-                                                                        </li>
-                                                                    )
-                                                                })
-                                                            }
-                                                            <li className="last">
-                                                                <div className="node"><button className="btn btn-sm btn-primary waves-effect waves-light" onClick={this.onRoleAdd}><i className="icofont icofont-plus"></i></button>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        : null
-                                                }
-                                            </li>
-                                        </ul>
-                                    </div>
+                                                                                                                <li className="last">
+                                                                                                                    <div className="node"><button className="btn btn-sm btn-primary waves-effect waves-light" onClick={() => { self.onAddAction(chilrole.id, childtrangthai.id) }}><i className="icofont icofont-plus"></i></button>
+                                                                                                                    </div>
+                                                                                                                </li>
+                                                                                                            </ul>
+                                                                                                            :
+                                                                                                            <span className="require-mess">(required)</span>
+                                                                                                    }
+                                                                                                </li>
+                                                                                            )
+                                                                                        })
+                                                                                    }
+                                                                                    <li className="last">
+                                                                                        <div className="node"><button className='btn btn-sm btn-primary waves-effect waves-light ' name={chilrole.id} onClick={() => { self.onAddTrangThai(chilrole.id) }}><i className="icofont icofont-plus"></i></button>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                                : <span className="require-mess">(required)</span>
+                                                                        }
+                                                                    </li>
+                                                                )
+                                                            })
+                                                        }
+                                                        <li className="last">
+                                                            <div className="node"><button className="btn btn-sm btn-primary waves-effect waves-light" onClick={this.onRoleAdd}><i className="icofont icofont-plus"></i></button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    : null
+                                            }
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div className="form-group row">
-                                    <div className="col-md-12">
-                                        <label><b>Kết quả cấu hình:</b></label>
-                                    </div>
-                                    <div className="col-md-12">
-                                        <textarea className="form-control" rows="10" value={this.state.resulft} readOnly></textarea>
-                                    </div>
+                            </div>
+                            <div className="form-group row">
+                                <div className="col-md-12">
+                                    <label><b>Kết quả cấu hình:</b></label>
+                                </div>
+                                <div className="col-md-12">
+                                    <textarea className="form-control" rows="10" value={this.state.resulft} readOnly></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </MainLayout >
+            </div>
         );
     }
 }
